@@ -1,2 +1,2 @@
 # Prep&PlateIt
-![Example GIF](static/example.gif)
+![Example GIF](static/web.gif)
