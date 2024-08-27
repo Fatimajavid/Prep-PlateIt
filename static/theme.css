@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Zilla Slab', serif;
     margin: 0;
@@ -23,12 +24,38 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow */
     height: 300px; /* Adjust height as needed */
+    position: relative; /* Allows for positioning of child elements */
+}
+
+/* Container for header images and title */
+.header-content {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 100%;
+    max-width: 1200px; /* Adjust based on desired maximum width */
+}
+
+/* Left and right images */
+.header-image-left {
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Larger size for the left image */
+    margin: 0 40px; /* Space between images and title */
+}
+
+.header-image-right {
+    height: auto; /* Maintain aspect ratio */
+    max-height: 240px; /* Smaller size for the right image */
+    margin: 0 10px; /* Space between images and title */
 }
 
 .header-title {
-    font-size: 1.5em; /* Adjust the size as needed */
+    font-size: 2em; /* Adjust the size as needed */
     color: #333; /* Dark color for better contrast */
     margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center text horizontally */
 }
 
 .header-title h1 {
@@ -72,3 +99,201 @@ body {
     background-color: #d1bfa4; /* Light brown color on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
+/*
+/* Page Header Styles */
+.page-header {
+    background-color: #d0f0c0; /* Light green background */
+    text-align: center; /* Center the text horizontally */
+    padding: 15px; /* Add padding around the text */
+    color: #6f4e37; /* Brown color for the header text */
+    font-size: 1.5em; /* Adjust the size as needed */
+    border-bottom: 2px solid #a2c9a2; /* Optional: A darker green border */
+}
+
+/* Styles for Cuisine and Meal Type Pages */
+.page-background {
+    background-image: url('/static/table.jpg'); /* Background image */
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background repetition */
+    min-height: 80vh; /* Ensure the background covers at least the full viewport height */
+    padding: 20px; /* Add padding around the content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.content {
+    max-width: 800px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the content */
+}
+
+.page-header h1 {
+    color: #6f4e37; /* Brown color */
+    text-align: center; /* Center-aligns text */
+    font-size: 2em; /* Adjust size as needed */
+}
+
+.cuisine-list, .meal-type-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.cuisine-box, .meal-type-box {
+    display: inline-block;
+    background-color: #7cbf7c; /* Green background for boxes */
+    color: #6f4e37; /* Dull color for text */
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #fff; /* White border */
+}
+
+.cuisine-box:hover, .meal-type-box:hover {
+    background-color: #6aa84f; /* Darker green on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Recipes Page Styles */
+.recipe-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+.recipe-box {
+    background-color: #fff; /* White background for the box */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    width: calc(50% - 20px); /* Two boxes per row, accounting for gap */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    padding: 10px; /* Add padding inside the box */
+}
+
+.recipe-image {
+    width: 100%; /* Make image full width of the box */
+    height: auto; /* Maintain aspect ratio */
+    border-bottom: 2px solid #f0f0f0; /* Optional: border for separation */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+.recipe-box h2 {
+    font-size: 1.2em; /* Adjust font size as needed */
+    color: #6aa84f; /* Green color for the text */
+    margin: 10px 0 0; /* Margin for spacing */
+}
+
+.recipe-box a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from the parent element */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space out buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+.button-container a.btn {
+    font-family: 'Zilla Slab', serif; /* Zilla Slab font for buttons */
+}
+
+/* Recipe Detail Page Styles */
+.recipe-background {
+    max-width: 1200px; /* Max width of the content */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Padding around the content */
+    background-color: #fff; /* White background for the recipe details */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual separation */
+}
+
+.recipe-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between image and ingredients */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+}
+
+.recipe-image {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.recipe-info {
+    position: absolute;
+    top: 10px; /* Position from the top of the image */
+    left: 10px; /* Position from the left of the image */
+    right: 10px; /* Position from the right of the image */
+    display: flex;
+    justify-content: space-between;
+    color: #333; /* Dark color for better contrast */
+}
+
+.servings, .prep-time {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.ingredients-container {
+    flex: 1;
+    background-color: #d0f0c0; /* Light green background */
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 20px; /* Space between image and ingredients */
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients-list li {
+    margin-bottom: 10px; /* Space between ingredients */
+}
+
+.instructions-container {
+    margin-top: 20px; /* Space between ingredients and instructions */
+    text-align: left;
+}
+
+.instructions-container p {
+    margin: 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+.btn.back-to-recipes {
+    display: block;
+    margin: 20px auto; /* Center the button horizontally */
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #7cbf7c; /* Green background for the button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.btn.back-to-recipes:hover {
+    background-color: #6aa84f; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
