@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template, jsonify
 import os
+from dotenv import load_dotenv
 import requests
+load_dotenv()
 
 app= Flask(__name__)
-API_KEY = API_KEY
+API_KEY = os.getenv('API_KEY')
 BASE_URL = 'https://api.spoonacular.com'
 
 @app.route('/')
