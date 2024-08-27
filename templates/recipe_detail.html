@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.title }}</title>
+    <link rel="stylesheet" href="/static/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <h1>{{ recipe.title }}</h1>
+    </header>
+    <main class="page-background">
+        <div class="recipe-background">
+            <div class="recipe-detail">
+                <div class="image-container">
+                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
+                    <div class="recipe-info">
+                        <div class="servings">Servings: {{ recipe.servings }}</div>
+                        <div class="prep-time">Prep Time: {{ recipe.readyInMinutes }} minutes</div>
+                    </div>
+                </div>
+                <div class="ingredients-container">
+                    <h2>Ingredients</h2>
+                    <ul class="ingredients-list">
+                        {% for ingredient in recipe.extendedIngredients %}
+                        <li>{{ ingredient.original }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="instructions-container">
+                    <h2>Instructions</h2>
+                    <div class="instructions">
+                        {{ recipe.instructions | safe }}
+                    </div>
+                </div>
+            </div>
+            <a href="/recipes?query={{ recipe.cuisines[0] }}" class="btn back-to-recipes">Back to Recipes</a>
+        </div>
+    </main>
+</body>
+</html>
