@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Meal Type</title>
+    <link rel="stylesheet" href="/static/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Select a Meal Type</h1>
+    </header>
+    <main class="page-background">
+        <div class="content">
+            <ul class="meal-type-list">
+                {% for meal_type in meal_types %}
+                <li><a class="meal-type-box" href="/recipes?query={{ meal_type }}">{{ meal_type.capitalize() }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="button-container">
+                <a href="/" class="btn">Back to Home</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
