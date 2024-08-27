@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="/static/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Recipes</h1>
+    </header>
+    <main class="page-background">
+        <div class="content">
+            <ul class="recipe-list">
+                {% for recipe in recipes.results %}
+                <li class="recipe-box">
+                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="recipe-image">
+                    <h2>{{ recipe.title }}</h2>
+                    <a href="/recipe/{{ recipe.id }}" class="btn">View Recipe</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="button-container">
+                <a href="/" class="btn">Back to Home</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
