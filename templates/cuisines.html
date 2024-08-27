@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Cuisine</title>
+    <link rel="stylesheet" href="/static/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Select a Cuisine</h1>
+    </header>
+    <main class="page-background">
+        <div class="content">
+            <ul class="cuisine-list">
+                {% for cuisine in cuisines.cuisines %}
+                <li><a class="cuisine-box" href="/recipes?query={{ cuisine }}">{{ cuisine }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="button-container">
+                <a href="/" class="btn">Back to Home</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
